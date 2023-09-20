@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    /* background-color: red; */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 62.5%;
+    /* 1rem = 10px */
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 2rem 1.3rem;
+    font-size: 1.4rem;
+}
+
+.logo span {
+    font-size: 2rem;
+}
+
+.logo img {
+    width: 1.5rem;
+    filter: invert();
+}
+
+ul{
+    display: flex;
+}
+
+ul li{
+    list-style: none;
+    padding: 0 2rem;
+}
+
+ul > li > a {
+    text-decoration: none;
+    color: white;
+}
+
+ul>li>a:hover{
+    color: rgb(222, 207, 207);
+}
+
+main {
+    min-height: 100vh;
+}
+
+.container{
+    max-width: 80vw;
+    margin: auto;
+    padding: 0.5rem 1.2rem;
+}
+
+.container h1{
+    padding: 1rem 0;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content:center ;
+}
+
+@media only screen and (max-width:600px) {
+    body{
+        background-color: lightblue;
+    }
+
+    .container{
+        font-size: 1.3rem;
+    }
+    nav{
+        flex-direction: column;
+    }
+    .logo{
+        padding: 0.5rem 0;
+    }
+    .logo img {
+        width: 1.4rem;
+        filter: invert();
+    }
+}
