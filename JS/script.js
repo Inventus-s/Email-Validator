@@ -1,21 +1,26 @@
 console.log("Script is Working");
-let resultContainer = document.getElementById("resultContainer");
+let resultContainer = document.getElementById("255");
+// resultContainer.innerHTML = `<div>hello</div>`;
 
 let submitBtn = document.getElementById("submitBtn");
 
 submitBtn.addEventListener("click", async (e) => {
   e.preventDefault();
   console.log("Working");
+  let email = document.getElementById("email").value;
   resultContainer.innerHTML = `<img src="/img/loader.svg" alt="loader">`;
+  console.log("Working");
   let key = "ema_live_kmM72FH1pDG7EAPTPzCRA7Ix2XtLIbkw4m2DpCQl";
-  let email = document.getElementById("username").value;
   let url = `https://api.emailvalidation.io/v1/info?apikey=${key}&email=${email}`;
   let res = await fetch(url);
+  console.log("Working");
   let result = await res.json();
   let str = ``
+  let header = document.getElementById('header')
+  header.innerText = `Email Validation Information: ${result["email"]}`
   for (key of Object.keys(result)) {
     if(result[key] !== "" && result[key]!== " "){ 
-        str = str + `<div>${key} : ${result[key]}</div>`
+        str = str + `<div class="box"><dd class="data">${key}</dd><dt class="data">${result[key]}</dt></div>`
     }
   }
 
